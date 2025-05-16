@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  frontend:
+    image: nepmine/react-welcome-app:latest
+    ports:
+      - "3000:4173"   # Maps host port 3000 to container port 4173 (vite default)
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+  backend:
+    image: nepmine/node-api-server:latest
+    ports:
+      - "5000:5000"   # Your backend API port
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped

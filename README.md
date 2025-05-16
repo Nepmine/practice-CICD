@@ -78,5 +78,8 @@ Make sure both containers/services are running for full functionality.
 ## 📩 Contact
 
 For any questions or help, reach out to Suraj Ghimire.
+email: surajghimire13579@gmail
+linkedin: https://www.linkedin.com/in/suraj-ghimire-30b051225/
+instagram: https://www.instagram.com/lsuraj_ghimirel
 
 ---

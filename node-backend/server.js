@@ -7,7 +7,7 @@ const PORT = process.env.PORT || 5000;
 app.use(cors()); // Enable CORS for all origins
 
 app.get('/api/welcome', (req, res) => {
-  res.json({ message: 'Hello from the Node.js backend also!' });
+  res.json({ message: 'Hello from the Node.js backend also by Nepmine !' });
 });
 
 app.listen(PORT, () => {

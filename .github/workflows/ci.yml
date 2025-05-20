@@ -39,3 +39,8 @@ jobs:
           file: ./node-backend/Dockerfile
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/node-api-server:latest
+
+
+      - name: Trigger Railway Redeploy
+        run: |
+          curl -X POST https://backboard.railway.app/webhook/deploy/68bed24c-34f6-4d63-8473-48a267cb8613

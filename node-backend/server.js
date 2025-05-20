@@ -10,7 +10,7 @@ app.get('/ping', (req, res) => {
   res.json({ message: 'PONG' });
 });
 app.get('/api/welcome', (req, res) => {
-  res.json({ message: 'Hi from the Node.js backend also by Nepmine !' });
+  res.json({ message: 'Hi from the Node.js backend by Nepmine !' });
 });
 app.get('/', (req, res) => {
   res.json({ message: 'Welcome to the CICD world !!' });

@@ -1,85 +1,32 @@
----
+# CI/CD Practice Pipeline
 
-# Learn CICD Project
+A **full-stack React + Node.js** example demonstrating automated CI/CD with Docker and GitHub Actions.
 
-This repository contains both the **React frontend** and **Node.js backend** for the Learn CICD project.
+## 🚀 Key Features
+- **Frontend:** React app built with Vite (TypeScript).
+- **Backend:** Node.js + Express API.
+- **Containerization:** Each service has a Dockerfile, enabling image builds.
+- **CI/CD:** GitHub Actions workflow builds Docker images for both services and pushes to Docker Hub. After pushing, a Railway webhook is triggered to redeploy the updated containers.
+- **Automation:** Example of an “Infrastructure as Code” pipeline using containers.
 
----
+## 🛠️ Tech Stack
+- **Frontend:** React 18 (Vite, TypeScript)
+- **Backend:** Node.js, Express, TypeScript
+- **DevOps:** Docker, Docker Compose (for local dev), GitHub Actions, Railway App Deployment.
 
-## 📁 Project Structure
+## 🔧 Getting Started
+1. **Clone the repo:** `git clone https://github.com/Nepmine/practice-CICD.git`
+2. **Configure Secrets:** In your GitHub Actions settings, add:
+   - `DOCKERHUB_USERNAME` and `DOCKERHUB_TOKEN` for image push.
+   - `RAILWAY_WEBHOOK_URL` for auto-deploy (if using Railway).
+3. **Local Development:** 
+   - In separate terminals, run `npm run dev` in `/frontend` and `npm run dev` in `/backend`.
+   - Access frontend on [http://localhost:5173](http://localhost:5173) and backend on [http://localhost:5000](http://localhost:5000).
+4. **Docker Builds:** The `ci.yml` workflow (on push to `main`) will:
+   - Build the frontend and backend Docker images.
+   - Push them to Docker Hub (tags like `username/practice-frontend:latest`).
+   - Send a POST to the Railway webhook for deployment.
 
-```
-/frontend   - React app built with Vite
-/backend    - Node.js backend API server using Express
-```
+Refer to the GitHub Actions YAML (`.github/workflows/ci.yml`) for details on the CI steps and modify as needed for your own projects.
 
----
-
-## ⚙️ Setup & Run Locally
-
-### 1. Frontend
-
-```bash
-cd frontend
-npm install
-npm run dev
-```
-
-Open your browser at `http://localhost:5173`
-
----
-
-### 2. Backend
-
-```bash
-cd backend
-npm install
-npm start
-```
-
-Backend runs on `http://localhost:5000`
-
----
-
-## 📦 Docker Setup
-
-### Build and run frontend container
-
-```bash
-docker build -t react-frontend ./frontend
-docker run -p 3000:3000 react-frontend
-```
-
-### Build and run backend container
-
-```bash
-docker build -t node-backend ./backend
-docker run -p 5000:5000 node-backend
-```
-
----
-
-## 🔗 Connecting Frontend and Backend
-
-The frontend fetches data from the backend API at `http://localhost:5000/api/...`
-
-Make sure both containers/services are running for full functionality.
-
----
-
-## 🛠️ Technologies Used
-
-* React with Vite
-* Node.js with Express
-* Docker for containerization
-
----
-
-## 📩 Contact
-
-For any questions or help, reach out to Suraj Ghimire.
-email: surajghimire13579@gmail
-linkedin: https://www.linkedin.com/in/suraj-ghimire-30b051225/
-instagram: https://www.instagram.com/lsuraj_ghimirel
-
----
+## 📦 Directory Layout
